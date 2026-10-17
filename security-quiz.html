@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>اختبار أمان استخدام الجهاز</title>
+<style>
+body { font-family: Arial; direction: rtl; padding: 20px; background:#f7f7f7; }
+.container { max-width: 500px; margin: auto; background:white; padding:20px; border-radius:10px; }
+button { padding: 10px 20px; margin-top: 20px; width:100%; font-size:16px; }
+select { width:100%; padding:10px; margin-bottom:20px; }
+h2 { text-align:center; }
+#result { margin-top:20px; font-size:18px; text-align:center; font-weight:bold; }
+</style>
+</head>
+<body>
+
+<div class="container">
+<h2>اختبار أمان استخدام الجهاز</h2>
+
+<form id="quiz">
+
+<label>1) كيف ستسجل الدخول؟</label>
+<select id="q1">
+  <option value="2">استخدام وضع الضيف</option>
+  <option value="1">استخدام حسابي الشخصي</option>
+  <option value="0">تسجيل الدخول بحساب صديقتي</option>
+</select>
+
+<label>2) ماذا ستفعل بعد تحميل ملف؟</label>
+<select id="q2">
+  <option value="2">رفعه إلى حسابي السحابي</option>
+  <option value="1">تركه مفتوحًا في البرنامج</option>
+  <option value="0">حفظه على سطح المكتب</option>
+</select>
+
+<label>3) كيف ستغادر الجهاز؟</label>
+<select id="q3">
+  <option value="2">تسجيل الخروج ومسح بيانات المتصفح</option>
+  <option value="0">إغلاق النافذة فقط</option>
+  <option value="0">ترك الجهاز كما هو</option>
+</select>
+
+<label>4) هل ستسمح للمتصفح بحفظ كلمة المرور؟</label>
+<select id="q4">
+  <option value="2">لا، لا تحفظ كلمة المرور</option>
+  <option value="0">نعم، احفظ كلمة المرور</option>
+</select>
+
+<label>5) ماذا ستفعل إذا ظهر تحديث أمني؟</label>
+<select id="q5">
+  <option value="2">تثبيت التحديث فورًا</option>
+  <option value="1">تأجيل التحديث</option>
+  <option value="0">تجاهل التحديث</option>
+</select>
+
+<button type="button" onclick="calculate()">عرض النتيجة</button>
+
+</form>
+
+<h3 id="result"></h3>
+</div>
+
+<script>
+function calculate() {
+  let total =
+    Number(q1.value) +
+    Number(q2.value) +
+    Number(q3.value) +
+    Number(q4.value) +
+    Number
